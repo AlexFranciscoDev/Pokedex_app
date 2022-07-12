@@ -5,16 +5,6 @@ import { SearchPokemon } from '../components/SearchPokemon';
 import { SinglePokemon } from '../components/SinglePokemon';
 
 export const MainRouter = () => {
-    
-
-    // Search pokemon
-    const searchPokemon = (e) => {
-        // e.preventDefault();
-        // let target = e.target;
-        // let pokemonName = target.name.value;
-        
-    }
-
     return (
         <BrowserRouter>
             <SearchPokemon/>
