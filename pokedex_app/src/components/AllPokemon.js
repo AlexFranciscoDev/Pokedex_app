@@ -4,7 +4,7 @@ import { Pokemon } from './Pokemon';
 
 export const AllPokemon = () => {
   const navigate = useNavigate();
-  const itemsToDisplay = 9;
+  const itemsToDisplay = 12;
   const [pokemons, setPokemons] = useState([]);
   const pokemonArray = [];
 
@@ -16,7 +16,8 @@ export const AllPokemon = () => {
   const getPokemonHandler = async (id) => {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
     const data = await response.json();
-    pokemons.push(data);
+    setPokemons(pokemons => [...pokemons, data])
+    // setPokemons(pokemons.push(data));
     return data;
   }
 
@@ -37,7 +38,9 @@ export const AllPokemon = () => {
     <div className="container">
       <h1>All pokemon</h1>
       <div className="pokemons_container">
-        <Pokemon pokemonJSON={pokemons[0]} />
+      {pokemons.map((pokemon) => 
+        <Pokemon pokemonJSON={pokemon} key={pokemon.id}/>
+      )}
 
       </div>
     </div>
