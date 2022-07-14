@@ -10,6 +10,8 @@ export const Pokemon = ({ pokemonJSON }) => {
         id: pokemonJSON.id,
         name: pokemonJSON.name,
         types: pokemonJSON.types,
+        height: pokemonJSON.height,
+        weight: pokemonJSON.weight,
         sprite: pokemonJSON.sprites.front_default,
         sprite_shiny: pokemonJSON.sprites.front_shiny,
         stats: pokemonJSON.stats
@@ -62,10 +64,10 @@ export const Pokemon = ({ pokemonJSON }) => {
                 <img width="200px" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} src={showShiny ? pokemonData.sprite_shiny : pokemonData.sprite} alt={`${pokemonData.name}_sprite`} />
             </div>
             <div className="pokemon_data">
-                <h2>{pokemonData.name}</h2>
-                <div>
+                <h2>#{pokemonData.id} {pokemonData.name}</h2>
+                <div className="pokemon_types">
                     {pokemonData.types.map((type) =>
-                        <span className="typePokemon" key={type.type.name}>{type.type.name}</span>
+                        <span style={{background: typeColors[type.type.name]}} className="typePokemon" key={type.type.name}>{type.type.name}</span>
                     )}
                 </div>
                 <button className="btn_details" onClick={() => showInfoHandler(9)} > DETAILS</button>

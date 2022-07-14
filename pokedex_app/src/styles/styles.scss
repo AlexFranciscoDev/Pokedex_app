@@ -1,18 +1,36 @@
 /* GENERAL STYLES */
+@font-face {
+    font-family: pokemon_font;
+    src: url(pokemon_font.ttf);
+}
+
+@mixin text_format($textSize) {
+    font-family: pokemon_font, Helvetica, Arial;
+    font-size: $textSize;
+    text-transform: uppercase;
+}
+
 .container {
+    padding: 2rem 5rem;
+    margin: 0 auto !important;
     .pokemons_container {
         display: grid;
-        gap: 3rem;
+        gap: 2rem;
         grid-auto-rows: 22rem;
-        grid-template-columns: repeat( auto-fit, minmax(13rem, 1fr) );
+        grid-template-columns: repeat( auto-fit, minmax(10rem, 1fr) );
         align-items: center;
         justify-content: center;
+    }
+
+    button {
+        @include text_format(14px);
+        margin: 20px
     }
 
 }
 .card_container {
     grid-column: span 2;
-    border: 1px solid black;
+    box-shadow: 4px 4px 18px 0px rgba(0,0,0,0.35);
     border-radius: 10px;
     .sprite_container {
         border-radius: 10px 10px 0px 0px;
@@ -23,6 +41,28 @@
 
         img:hover {
             transform: translateY(-5px); 
+        }
+    }
+
+    .pokemon_data {
+        h2 {
+            text-transform: capitalize;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        .pokemon_types {
+            span {
+                color: white;
+                padding: 5px;
+                margin: 0px 5px;
+                @include text_format(12px);
+            }
+        }
+
+        .btn_details {
+            margin: 15px 0px;
+            padding: 5px;
+            @include text_format(12px);
         }
     }
 }

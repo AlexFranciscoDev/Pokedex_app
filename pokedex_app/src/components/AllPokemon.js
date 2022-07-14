@@ -5,8 +5,8 @@ import { Pokemon } from './Pokemon';
 export const AllPokemon = () => {
   const navigate = useNavigate();
   const itemsToDisplay = 12;
+  const [pokemonsToDisplay, setPokemonsToDisplay] = useState(itemsToDisplay);
   const [pokemons, setPokemons] = useState([]);
-  const pokemonArray = [];
 
 
   useEffect(() => {
@@ -14,11 +14,10 @@ export const AllPokemon = () => {
   }, [])
 
   const getPokemonHandler = async (id) => {
+    console.log("id: " + id);
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
     const data = await response.json();
-    setPokemons(pokemons => [...pokemons, data])
-    // setPokemons(pokemons.push(data));
-    return data;
+    await setPokemons(pokemons => [...pokemons, data])
   }
 
   const getPokemons = () => {
@@ -27,21 +26,42 @@ export const AllPokemon = () => {
     }
   }
 
+  const getNextPage = () => {
+    setPokemons([]); // Empty current array
+    let limitToDisplay = pokemonsToDisplay + itemsToDisplay;
+    for (let i = pokemonsToDisplay + 1; i <= limitToDisplay; i++) {
+      let pokemonData = getPokemonHandler(i);
+    }
+    setPokemonsToDisplay(limitToDisplay);
+  }
+
+  const getPreviousPage = () => {
+    // Check if its not the first page
+      
+      setPokemons([]); // Empty current array
+      let limitToDisplay = pokemonsToDisplay - itemsToDisplay; // We have to substract 1, to not repeat
+      let offset = limitToDisplay - itemsToDisplay; // We have to substract 1, to not repeat
+      for (let i = offset + 1; i <= limitToDisplay ; i++) {
+        let pokemonData = getPokemonHandler(i);
+      }
+      setPokemonsToDisplay(limitToDisplay);
+  }
+
   // const showInfoHandler = (id) => {
   //   console.log(id);
   //   console.log("el id es: ");
   //   navigate('/pokemon/3');
   // }
-  console.log(pokemons);
 
   return (
     <div className="container">
       <h1>All pokemon</h1>
+      <button onClick={getPreviousPage}>Previous</button>
+      <button onClick={getNextPage}>Next</button>
       <div className="pokemons_container">
-      {pokemons.map((pokemon) => 
-        <Pokemon pokemonJSON={pokemon} key={pokemon.id}/>
-      )}
-
+        {pokemons.map((pokemon) =>
+          <Pokemon pokemonJSON={pokemon} key={pokemon.id} />
+        )}
       </div>
     </div>
   )
