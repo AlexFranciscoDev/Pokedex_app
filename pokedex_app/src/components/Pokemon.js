@@ -52,7 +52,7 @@ export const Pokemon = ({ pokemonJSON }) => {
     const showInfoHandler = (id) => {
         console.log(id);
         console.log("el id es: ");
-        navigate('/pokemon/3');
+        navigate(`/pokemon/${id}`, {state : {pokemonJSON}});
     }
 
     return (
@@ -70,7 +70,7 @@ export const Pokemon = ({ pokemonJSON }) => {
                         <span style={{background: typeColors[type.type.name]}} className="typePokemon" key={type.type.name}>{type.type.name}</span>
                     )}
                 </div>
-                <button className="btn_details" onClick={() => showInfoHandler(9)} > DETAILS</button>
+                <button className="btn_details" onClick={() => showInfoHandler(pokemonData.id)} > DETAILS</button>
             </div>
         </div >
     )
