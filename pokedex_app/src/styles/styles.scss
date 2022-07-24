@@ -1,14 +1,4 @@
-/* GENERAL STYLES */
-@font-face {
-    font-family: pokemon_font;
-    src: url(pokemon_font.ttf);
-}
-
-@mixin text_format($textSize) {
-    font-family: pokemon_font, Helvetica, Arial;
-    font-size: $textSize;
-    text-transform: uppercase;
-}
+@import './utilities';
 
 .container {
     padding: 2rem 5rem;

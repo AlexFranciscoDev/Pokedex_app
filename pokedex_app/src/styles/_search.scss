@@ -1,0 +1,16 @@
+@import './utilities';
+
+.searchInput {
+    padding: 5px;
+}
+
+.searchBtn {
+    @include text_format(13px);
+    padding: 6px;
+}
+
+.notExist {
+    @include text_format(14px);
+    margin-bottom: -20px;
+    margin-top: 30px;
+}

@@ -52,7 +52,10 @@ export const Pokemon = ({ pokemonJSON }) => {
     const showInfoHandler = (id) => {
         console.log(id);
         console.log("el id es: ");
-        navigate(`/pokemon/${id}`, {state : {pokemonJSON}});
+        navigate(`/pokemon/${id}`, 
+        {
+            state : {pokemonJSON}
+        });
     }
 
     return (

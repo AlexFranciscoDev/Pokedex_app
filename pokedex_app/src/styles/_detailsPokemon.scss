@@ -1,0 +1,63 @@
+@import './utilities';
+
+.single_card_container {
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 400px;
+    grid-column: span 2;
+    box-shadow: 4px 4px 18px 0px rgba(0,0,0,0.35);
+    border-radius: 10px;
+    .sprite_container {
+        border-radius: 10px 10px 0px 0px;
+
+        img {
+            transition: all 0.3s ease-in-out;
+        }
+
+        img:hover {
+            transform: translateY(-5px); 
+        }
+    }
+
+    .pokemon_data {
+        padding-bottom: 20px;
+
+        h2 {
+            text-transform: capitalize;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        .pokemon_types {
+            span {
+                color: white;
+                padding: 5px;
+                margin: 0px 5px;
+                @include text_format(12px);
+            }
+        }
+
+        .details {
+            h3 {
+                @include text_format(18px);
+                margin-top: 30px;
+            }
+            ul {
+                list-style: none;
+                padding: 0px 30px;
+                li {
+                    display: flex;
+                    justify-content: space-between;
+                    @include text_format(14px);
+                    margin: 20px 0px;
+                }
+            }
+        }
+    }
+}
+
+.backBtn {
+    @include text_format(13px);
+    margin-top: 20px;
+    padding: 5px;
+    margin-bottom: 50px;
+}

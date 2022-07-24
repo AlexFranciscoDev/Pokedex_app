@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route, Link, BrowserRouter, useNavigate } from 'react-router-dom';
 import { AllPokemon } from '../components/AllPokemon';
 import { SearchPokemon } from '../components/SearchPokemon';
-import { SinglePokemon } from '../components/SinglePokemon';
+import { DetailsPokemon } from '../components/DetailsPokemon';
 
 export const MainRouter = () => {
     return (
@@ -11,10 +11,10 @@ export const MainRouter = () => {
             <Routes>
                 <Route path="/" element={<AllPokemon/>}></Route>
                 {/* Single pokemon*/}
-                <Route path="/pokemon/:id/:name" element={<SinglePokemon/>}></Route>
-                <Route path="/pokemon/:name" element={<SinglePokemon/>}></Route>
-                <Route path="/pokemon/:id" element={<SinglePokemon/>}></Route>
-                <Route path="/pokemon" element={<SinglePokemon/>}></Route>
+                <Route path="/pokemon/:id/:name" element={<DetailsPokemon/>}></Route>
+                <Route path="/pokemon/:name" element={<DetailsPokemon/>}></Route>
+                <Route path="/pokemon/:id" element={<DetailsPokemon/>}></Route>
+                <Route path="/pokemon" element={<DetailsPokemon/>}></Route>
             </Routes>
         </BrowserRouter>
     );
