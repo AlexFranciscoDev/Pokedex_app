@@ -64,7 +64,7 @@ export const Pokemon = ({ pokemonJSON }) => {
                 className="sprite_container"
                 style={pokemonData.types.length > 1 ? {background: `linear-gradient(to right, ${colorOne}, ${colorTwo})`} : {background: colorOne}}
             >
-                <img width="200px" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} src={showShiny ? pokemonData.sprite_shiny : pokemonData.sprite} alt={`${pokemonData.name}_sprite`} />
+                <img width="200px" onClick={() => showInfoHandler(pokemonData.id)} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} src={showShiny ? pokemonData.sprite_shiny : pokemonData.sprite} alt={`${pokemonData.name}_sprite`} />
             </div>
             <div className="pokemon_data">
                 <h2>#{pokemonData.id} {pokemonData.name}</h2>

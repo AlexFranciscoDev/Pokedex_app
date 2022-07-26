@@ -1,5 +1,11 @@
 @import './utilities';
 
+.web_title {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    @include text_format(25px);
+}
+
 .searchInput {
     padding: 5px;
 }

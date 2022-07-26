@@ -32,7 +32,7 @@ export const AllPokemon = () => {
       for (let i = 1; i <= itemsToDisplay; i++) {
         await getPokemonHandler(i);
       }
-    }, 1000)
+    }, 600)
   }
 
   const getNextPage = async () => {
@@ -44,7 +44,7 @@ export const AllPokemon = () => {
         await getPokemonHandler(i);
       }
       setPokemonsToDisplay(limitToDisplay);
-    }, 1000)
+    }, 600)
   }
 
   const getPreviousPage = async () => {
@@ -59,7 +59,7 @@ export const AllPokemon = () => {
           await getPokemonHandler(i);
         }
         setPokemonsToDisplay(limitToDisplay);
-      })
+      }, 600)
     }
   }
 
@@ -79,7 +79,6 @@ export const AllPokemon = () => {
   } else if (!loading && errors === "") {
     return (
       <div className="container">
-        <h1>All pokemon</h1>
         <button onClick={getPreviousPage}>Previous</button>
         <button onClick={getNextPage}>Next</button>
         <div className="pokemons_container">

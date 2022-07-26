@@ -29,7 +29,7 @@ export const SearchPokemon = () => {
     }
     return (
         <div>
-            <h1>Search</h1>
+            <h1 className="web_title">Pokédex</h1>
             <form onSubmit={searchHandler}>
                 <input className="searchInput" type="text" name="name" placeholder="Search pokemon" onChange={event => setSearchValue(event.target.value)} value={searchValue} />
                 <input className="searchBtn" type="submit" value="Search" />
