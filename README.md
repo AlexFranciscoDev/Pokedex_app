@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# 🧩 Pokédex App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based Pokédex application that consumes the PokéAPI to search, browse and explore Pokémon data through an interactive and responsive interface.
 
-## Available Scripts
+This project focuses on API integration, client-side routing, pagination logic and clean component architecture.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🛠 Technologies
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React 18 (Create React App)
+- React Router DOM v6
+- JavaScript (ES6+)
+- SCSS / SASS
+- REST API (PokéAPI)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## ✨ Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 🔍 Search Pokémon by name
+- 📄 Paginated Pokémon list (12 per page)
+- 📊 Detailed Pokémon view with stats and types
+- 🎨 Dynamic background colors based on Pokémon type
+- ✨ Shiny sprite on hover
+- ⏳ Loading state handling
+- 📱 Responsive layout
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🌐 API Integration
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This project consumes data from:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+https://pokeapi.co/
 
-### `npm run eject`
+Data is fetched dynamically using `fetch` and rendered based on component state.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Each Pokémon's detailed data is retrieved individually and displayed in card and detail views.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🧩 Architecture Overview
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The project follows a component-based structure:
+- `AllPokemon` handles pagination logic and data fetching
+- `Pokemon` renders reusable card components
+- `SearchPokemon` handles dynamic search and navigation
+- `DetailsPokemon` displays full Pokémon stats
+- Routing is handled via React Router
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🛠 The Process
+The application was built focusing on:
+- Managing asynchronous data fetching
+- Implementing client-side pagination
+- Passing state through navigation
+- Creating reusable UI components
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📚 What I Learned
+- Working with external REST APIs
+- Handling asynchronous JavaScript using async/await
+- Managing state in React applications
+- Implementing pagination logic manually
+- Using SCSS mixins and modular styling
+- Routing
 
-### Code Splitting
+## 🔮 Improvements
+- Improve error handling for invalid searches
+- Add unit tests for components
+- Migrate to TypeScript
+- Display pagination number, instead of just two buttons of 'Previous' and 'Next'
+- Allow searching by using part of Pokémon's name instead of full Pokémon name
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## ▶️ Running the Project
+```bash
+git clone https://github.com/AlexFranciscoDev/Pokedex_app.git
+```
 
-### Analyzing the Bundle Size
+Install dependencies:
+```
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Run locally:
 
-### Making a Progressive Web App
+```
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The application will be available at: http://localhost:3000
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
