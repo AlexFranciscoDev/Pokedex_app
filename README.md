@@ -90,4 +90,5 @@ npm start
 ```
 
 The application will be available at: http://localhost:3000
+
 ![Pokemon-api-demo](https://raw.githubusercontent.com/AlexFranciscoDev/Pokedex_app/main/public/pokemon-api.gif)
